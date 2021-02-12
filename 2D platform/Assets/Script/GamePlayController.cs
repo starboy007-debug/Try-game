@@ -9,8 +9,8 @@ public class GamePlayController : MonoBehaviour
     private Text lifetext;
     private Text scoretext;
 
-    private int lifescore;
-    private int score;
+    private int lifescore = 2;
+    private int score = 0;
 
     void Awake()
     {

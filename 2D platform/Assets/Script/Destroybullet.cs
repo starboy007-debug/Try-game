@@ -9,6 +9,6 @@ public class Destroybullet : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, delay);
-       Instantiate(fireeffect, transform.position, Quaternion.identity);
+        Instantiate(fireeffect, transform.position, Quaternion.identity);
     }
 }
