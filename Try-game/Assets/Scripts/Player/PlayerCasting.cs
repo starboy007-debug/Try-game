@@ -6,7 +6,7 @@ public class PlayerCasting : MonoBehaviour
 {
     public static float distanceFromTarget;
     public float toTarget;
-    public string hitTag;
+ //   public string hitTag;
     void Update()
     {
         RaycastHit Hit;
@@ -15,7 +15,7 @@ public class PlayerCasting : MonoBehaviour
         {
             toTarget = Hit.distance;
             distanceFromTarget = toTarget;
-            hitTag = Hit.transform.tag;
+          //  hitTag = Hit.transform.tag;
         }
     }
 }
