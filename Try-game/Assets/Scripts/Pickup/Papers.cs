@@ -33,14 +33,23 @@ public class Papers : MonoBehaviour
 				Paper.SetActive(true);
 			//	CreakSound.Play();
 			}
+			Paper.SetActive(true);
+			StartCoroutine(Disappear());
 		}
+	}
+
+    IEnumerator Disappear()
+	{
+		yield return new WaitForSeconds(2f);
+		Paper.SetActive(false);
 	}
 
 	void OnMouseExit()
 	{
 		ActionDisplay.SetActive(false);
 		ActionText.SetActive(false);
-		Paper.SetActive(false);
-		this.GetComponent<BoxCollider>().enabled = true;
+		
+		//Paper.SetActive(false);
+		//this.GetComponent<BoxCollider>().enabled = true;
 	}
 }

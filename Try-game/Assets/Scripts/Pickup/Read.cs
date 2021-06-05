@@ -25,7 +25,10 @@ public class Read : MonoBehaviour
     {
         ActionDisplay.SetActive(false);
         ActionText.SetActive(false);
-        Paper.SetActive(false);
+        if (Input.GetButtonDown("Action"))
+        {
+            Paper.SetActive(false);
+        }
     }
 
 }
