@@ -9,6 +9,8 @@ public class Papers : MonoBehaviour
 	public GameObject ActionDisplay;
 	public GameObject ActionText;
 	public GameObject Paper;
+	public GameObject about;
+	public GameObject box;
 //	public AudioSource CreakSound;
 
 	void Update()
@@ -42,6 +44,14 @@ public class Papers : MonoBehaviour
 	{
 		yield return new WaitForSeconds(2f);
 		Paper.SetActive(false);
+		yield return new WaitForSeconds(1f);
+		about.SetActive(true);
+		RenderSettings.ambientIntensity = 0.2f;
+		yield return new WaitForSeconds(1f);
+		about.GetComponent<Text>().text = "Turn on the emergency light";
+		yield return new WaitForSeconds(2f);
+		about.GetComponent<Text>().text = "";
+		box.GetComponent<BoxCollider>().enabled = false;
 	}
 
 	void OnMouseExit()

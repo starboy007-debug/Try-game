@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Smbox : MonoBehaviour
+public class Cuter : MonoBehaviour
 {
-
+	public GameObject cutter;
 	public GameObject about;
 	public float TheDistance;
-	public GameObject ActionDisplay;
-	public GameObject ActionText;
-	public GameObject emergencylight;
-	bool isactive = false;
+	public static bool iscut = false;
+	public GameObject secreatdoor;
+
+	void Start()
+	{
+		secreatdoor.GetComponent<BoxCollider>().enabled = false;
+	}
 	void Update()
 	{
 		TheDistance = PlayerCasting.distanceFromTarget;
@@ -21,27 +24,21 @@ public class Smbox : MonoBehaviour
 	{
 		if (TheDistance <= 3)
 		{
-			if(isactive == false)
-			{
-				ActionDisplay.SetActive(true);
-				ActionText.SetActive(true);
-			}
-			
+
 		}
 		if (Input.GetButtonDown("Action"))
 		{
 			if (TheDistance <= 3)
 			{
-				ActionDisplay.SetActive(false);
-				ActionText.SetActive(false);
-				isactive = true;
 				this.GetComponent<BoxCollider>().enabled = false;
-				about.GetComponent<Text>().text = "Emergency light turned on";
+				iscut = true;
+				about.GetComponent<Text>().text = "You got a cutter";
 				//	CreakSound.Play();
 			}
-			emergencylight.SetActive(true);
 			about.SetActive(true);
+			cutter.SetActive(false);
 			StartCoroutine(Disappear());
+			secreatdoor.GetComponent<BoxCollider>().enabled = true;
 		}
 	}
 
@@ -52,5 +49,4 @@ public class Smbox : MonoBehaviour
 		about.SetActive(false);
 
 	}
-
 }
