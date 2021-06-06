@@ -12,6 +12,7 @@ public class Smbox : MonoBehaviour
 	public GameObject ActionText;
 	public GameObject emergencylight;
 	bool isactive = false;
+	public GameObject torch;
 	void Update()
 	{
 		TheDistance = PlayerCasting.distanceFromTarget;
@@ -50,6 +51,12 @@ public class Smbox : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		about.SetActive(false);
+		yield return new WaitForSeconds(800f);
+		about.GetComponent<Text>().text = "I need find something like torch";
+		yield return new WaitForSeconds(2f);
+		about.GetComponent<Text>().text = "";
+		yield return new WaitForSeconds(88f);
+		torch.SetActive(true);
 
 	}
 

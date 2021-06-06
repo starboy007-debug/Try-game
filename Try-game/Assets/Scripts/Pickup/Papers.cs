@@ -51,7 +51,7 @@ public class Papers : MonoBehaviour
 		about.GetComponent<Text>().text = "Turn on the emergency light";
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
-		box.GetComponent<BoxCollider>().enabled = false;
+		box.GetComponent<BoxCollider>().enabled = true;
 	}
 
 	void OnMouseExit()

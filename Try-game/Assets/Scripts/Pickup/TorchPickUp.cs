@@ -10,6 +10,8 @@ public class TorchPickUp : MonoBehaviour
 	public GameObject about;
 	public GameObject skeleton;
 	public float TheDistance;
+	public GameObject padcut;
+	public GameObject skel;
 	void Update()
 	{
 		TheDistance = PlayerCasting.distanceFromTarget;
@@ -33,6 +35,7 @@ public class TorchPickUp : MonoBehaviour
 			torch1.SetActive(false);
 			torch2.SetActive(true);
 			skeleton.SetActive(true);
+			skel.GetComponent<BoxCollider>().enabled = true;
 			StartCoroutine(Disappear());
 		}
 	}
@@ -42,6 +45,8 @@ public class TorchPickUp : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		about.SetActive(false);
+		yield return new WaitForSeconds(600f);
+		padcut.SetActive(true);
 
 	}
 

@@ -38,7 +38,7 @@ public class CardPickUp : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		yield return new WaitForSeconds(2f);
-		about.GetComponent<Text>().text = "you can open door to go out";
+		about.GetComponent<Text>().text = "I think I can get out of here";
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		about.SetActive(false);
