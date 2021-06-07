@@ -45,7 +45,7 @@ public class Door : MonoBehaviour
 				this.GetComponent<BoxCollider>().enabled = false;
 				//ActionDisplay.SetActive(false);
 				//ActionText.SetActive(false);
-				//TheDoor.GetComponent<Animation>().Play("Door close");
+				TheDoor.GetComponent<Animation>().Play("Door close");
 				CreakSound.Play();
 				isopened = false;
 			}

@@ -13,6 +13,7 @@ public class Smbox : MonoBehaviour
 	public GameObject emergencylight;
 	bool isactive = false;
 	public GameObject torch;
+	public GameObject ghosttrig;
 	void Update()
 	{
 		TheDistance = PlayerCasting.distanceFromTarget;
@@ -42,6 +43,7 @@ public class Smbox : MonoBehaviour
 			}
 			emergencylight.SetActive(true);
 			about.SetActive(true);
+			ghosttrig.GetComponent<BoxCollider>().enabled = true;
 			StartCoroutine(Disappear());
 		}
 	}
@@ -51,7 +53,7 @@ public class Smbox : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		about.SetActive(false);
-		yield return new WaitForSeconds(800f);
+		yield return new WaitForSeconds(120f);
 		about.GetComponent<Text>().text = "I need find something like torch";
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
