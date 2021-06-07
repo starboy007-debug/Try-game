@@ -52,7 +52,7 @@ public class Smbox : MonoBehaviour
 	{
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
-		about.SetActive(false);
+		//about.SetActive(false);
 		yield return new WaitForSeconds(120f);
 		about.GetComponent<Text>().text = "I need find something like torch";
 		yield return new WaitForSeconds(2f);

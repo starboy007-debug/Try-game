@@ -38,7 +38,7 @@ public class Door : MonoBehaviour
 			}
 			
 		}
-		if (Input.GetButtonDown("Action"))
+		if (Input.GetButtonDown("Close"))
 		{
 			if (TheDistance <= 3 && isopened == true)
 			{

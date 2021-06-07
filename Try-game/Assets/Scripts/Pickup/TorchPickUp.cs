@@ -45,7 +45,7 @@ public class TorchPickUp : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		about.SetActive(false);
-		yield return new WaitForSeconds(600f);
+		yield return new WaitForSeconds(300f);
 		padcut.SetActive(true);
 
 	}

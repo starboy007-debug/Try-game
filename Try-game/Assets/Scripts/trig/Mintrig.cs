@@ -14,7 +14,7 @@ public class Mintrig : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         sphere.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         sphere.SetActive(false);
     }
 
