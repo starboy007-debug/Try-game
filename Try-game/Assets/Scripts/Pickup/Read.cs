@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class Read : MonoBehaviour
 {
-    public GameObject ActionDisplay;
-    public GameObject ActionText;
+   // public GameObject ActionDisplay;
+    //public GameObject ActionText;
     public GameObject Paper;
 
     void OnTriggerEnter()
     {
-        ActionDisplay.SetActive(true);
-        ActionText.SetActive(true);
+      //  ActionDisplay.SetActive(true);
+       // ActionText.SetActive(true);
         if (Input.GetButtonDown("Action")){
-            ActionDisplay.SetActive(false);
-            ActionText.SetActive(false);
+         //   ActionDisplay.SetActive(false);
+          //  ActionText.SetActive(false);
             Paper.SetActive(true);
         }
 
@@ -23,8 +23,8 @@ public class Read : MonoBehaviour
 
     void OnTriggerExit()
     {
-        ActionDisplay.SetActive(false);
-        ActionText.SetActive(false);
+        //ActionDisplay.SetActive(false);
+        //ActionText.SetActive(false);
         if (Input.GetButtonDown("Action"))
         {
             Paper.SetActive(false);

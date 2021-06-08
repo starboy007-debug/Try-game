@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Door : MonoBehaviour
 {
 	public float TheDistance;
-	public GameObject ActionDisplay;
-	public GameObject ActionText;
+	//public GameObject ActionDisplay;
+	//public GameObject ActionText;
 	public GameObject TheDoor;
 	public AudioSource CreakSound;
 	bool isopened = false;
@@ -21,8 +21,8 @@ public class Door : MonoBehaviour
 	{
 		if (TheDistance <= 3)
 		{
-			ActionDisplay.SetActive(true);
-			ActionText.SetActive(true);
+		//	ActionDisplay.SetActive(true);
+		//	ActionText.SetActive(true);
 		}
 		if (Input.GetButtonDown("Action"))
 		{
@@ -30,8 +30,8 @@ public class Door : MonoBehaviour
 			if (TheDistance <= 3 && isopened == false)
 			{
 				this.GetComponent<BoxCollider>().enabled = false;
-				ActionDisplay.SetActive(false);
-				ActionText.SetActive(false);
+			//	ActionDisplay.SetActive(false);
+			//	ActionText.SetActive(false);
 				TheDoor.GetComponent<Animation>().Play("Door Open");
 				CreakSound.Play();
 				isopened = true;
@@ -54,8 +54,8 @@ public class Door : MonoBehaviour
 
 	void OnMouseExit()
 	{
-		ActionDisplay.SetActive(false);
-		ActionText.SetActive(false);
+	//	ActionDisplay.SetActive(false);
+	//	ActionText.SetActive(false);
 	//	this.GetComponent<BoxCollider>().enabled = true;
 	}
 }

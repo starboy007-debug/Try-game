@@ -24,7 +24,7 @@ public class CardPickUp : MonoBehaviour
 			if (TheDistance <= 3)
 			{
 				this.GetComponent<BoxCollider>().enabled = false;
-				about.GetComponent<Text>().text = "You got a key";
+				about.GetComponent<Text>().text = "You got a keycard";
 				//	CreakSound.Play();
 			}
 			about.SetActive(true);

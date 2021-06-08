@@ -8,8 +8,8 @@ public class Smbox : MonoBehaviour
 
 	public GameObject about;
 	public float TheDistance;
-	public GameObject ActionDisplay;
-	public GameObject ActionText;
+	//public GameObject ActionDisplay;
+	//public GameObject ActionText;
 	public GameObject emergencylight;
 	bool isactive = false;
 	public GameObject torch;
@@ -25,8 +25,8 @@ public class Smbox : MonoBehaviour
 		{
 			if(isactive == false)
 			{
-				ActionDisplay.SetActive(true);
-				ActionText.SetActive(true);
+				//ActionDisplay.SetActive(true);
+				//ActionText.SetActive(true);
 			}
 			
 		}
@@ -34,13 +34,32 @@ public class Smbox : MonoBehaviour
 		{
 			if (TheDistance <= 3)
 			{
-				ActionDisplay.SetActive(false);
-				ActionText.SetActive(false);
+				//ActionDisplay.SetActive(false);
+				//ActionText.SetActive(false);
 				isactive = true;
-				this.GetComponent<BoxCollider>().enabled = false;
+				//Debug.Log("work");
+				
 				about.GetComponent<Text>().text = "Emergency light turned on";
 				//	CreakSound.Play();
 			}
+			emergencylight.SetActive(true);
+			about.SetActive(true);
+			ghosttrig.GetComponent<BoxCollider>().enabled = true;
+			StartCoroutine(Disappear());
+		}
+	}
+
+	void OnTriggerEnter()
+	{
+		if (TheDistance <= 3)
+		{
+			//ActionDisplay.SetActive(false);
+			//ActionText.SetActive(false);
+			isactive = true;
+			//Debug.Log("work");
+
+			about.GetComponent<Text>().text = "Emergency light turned on";
+			//	CreakSound.Play();
 			emergencylight.SetActive(true);
 			about.SetActive(true);
 			ghosttrig.GetComponent<BoxCollider>().enabled = true;
@@ -53,11 +72,13 @@ public class Smbox : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		//about.SetActive(false);
-		yield return new WaitForSeconds(120f);
+		yield return new WaitForSeconds(10f);
 		about.GetComponent<Text>().text = "I need find something like torch";
+		this.GetComponent<BoxCollider>().enabled = false;
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
-		yield return new WaitForSeconds(88f);
+		yield return new WaitForSeconds(8f);
+
 		torch.SetActive(true);
 
 	}
