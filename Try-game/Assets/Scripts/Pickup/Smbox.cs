@@ -58,10 +58,7 @@ public class Smbox : MonoBehaviour
 			isactive = true;
 			//Debug.Log("work");
 
-			about.GetComponent<Text>().text = "Emergency light turned on";
-			//	CreakSound.Play();
-			emergencylight.SetActive(true);
-			about.SetActive(true);
+			
 			ghosttrig.GetComponent<BoxCollider>().enabled = true;
 			StartCoroutine(Disappear());
 		}
@@ -69,6 +66,11 @@ public class Smbox : MonoBehaviour
 
 	IEnumerator Disappear()
 	{
+		yield return new WaitForSeconds(2f);
+		about.GetComponent<Text>().text = "Emergency light turned on";
+		//	CreakSound.Play();
+		emergencylight.SetActive(true);
+		about.SetActive(true);
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		//about.SetActive(false);

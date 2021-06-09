@@ -8,6 +8,7 @@ public class CardPickUp : MonoBehaviour
     public GameObject card;
     public GameObject about;
     public float TheDistance;
+	public static bool isout = false;
 	void Update()
 	{
 		TheDistance = PlayerCasting.distanceFromTarget;
@@ -15,16 +16,17 @@ public class CardPickUp : MonoBehaviour
 
 	void OnMouseOver()
 	{
-		if (TheDistance <= 3)
+		if (TheDistance <= 4)
 		{
 			
 		}
 		if (Input.GetButtonDown("Action"))
 		{
-			if (TheDistance <= 3)
+			if (TheDistance <= 4)
 			{
 				this.GetComponent<BoxCollider>().enabled = false;
 				about.GetComponent<Text>().text = "You got a keycard";
+				isout = true;
 				//	CreakSound.Play();
 			}
 			about.SetActive(true);

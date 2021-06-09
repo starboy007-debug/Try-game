@@ -19,13 +19,13 @@ public class TorchPickUp : MonoBehaviour
 
 	void OnMouseOver()
 	{
-		if (TheDistance <= 3)
+		if (TheDistance <= 4)
 		{
 
 		}
 		if (Input.GetButtonDown("Action"))
 		{
-			if (TheDistance <= 3)
+			if (TheDistance <= 4)
 			{
 				this.GetComponent<BoxCollider>().enabled = false;
 				about.GetComponent<Text>().text = "You got a torch";
@@ -45,7 +45,7 @@ public class TorchPickUp : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "";
 		about.SetActive(false);
-		yield return new WaitForSeconds(300f);
+		yield return new WaitForSeconds(12f);
 		padcut.SetActive(true);
 
 	}

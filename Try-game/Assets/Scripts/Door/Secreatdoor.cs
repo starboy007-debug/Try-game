@@ -11,6 +11,7 @@ public class Secreatdoor : MonoBehaviour
 	public GameObject cutter;
 	public GameObject locker;
 	bool isopened = false;
+	public GameObject card;
 
 	void Update()
 	{
@@ -32,6 +33,8 @@ public class Secreatdoor : MonoBehaviour
 		cutter.GetComponent<Animator>().enabled = false;
 		TheDoor.GetComponent<Animation>().Play("Door Open");
 		CreakSound.Play();
+		yield return new WaitForSeconds(11f);
+		card.SetActive(true);
 	}
 	
 }
