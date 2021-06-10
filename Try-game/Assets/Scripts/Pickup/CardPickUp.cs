@@ -9,6 +9,8 @@ public class CardPickUp : MonoBehaviour
     public GameObject about;
     public float TheDistance;
 	public static bool isout = false;
+	public GameObject ghost;
+	public GameObject torch;
 	void Update()
 	{
 		TheDistance = PlayerCasting.distanceFromTarget;
@@ -42,9 +44,14 @@ public class CardPickUp : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		about.GetComponent<Text>().text = "I think I can get out of here";
 		yield return new WaitForSeconds(2f);
+		torch.SetActive(false);
 		about.GetComponent<Text>().text = "";
+		yield return new WaitForSeconds(0.2f);
+		ghost.SetActive(true);
 		about.SetActive(false);
-		
+		yield return new WaitForSeconds(0.2f);
+		ghost.SetActive(false);
+
 	}
 
 }

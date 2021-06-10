@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class ExitDoor : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ExitDoor : MonoBehaviour
         if(Cuter.iscut == true)
         {
             fadein.SetActive(true);
+            SceneManager.LoadScene(0);
         }
         else
         {
