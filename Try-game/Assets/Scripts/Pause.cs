@@ -2,46 +2,71 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 
 public class Pause : MonoBehaviour
 {
-    bool ispause = false;
+    public bool gamePaused = false;
     public GameObject option;
-    public GameObject pausepanel;
-    private void Update()
+    public GameObject pauseMenu;
+    public AudioSource pauseaudio;
+
+    void Update()
     {
+        
         if (Input.GetButtonDown("Cancel"))
         {
-            if(ispause == false)
+            if (gamePaused == false)
             {
-                pausepanel.SetActive(true);
-                ispause = true;
+                pauseaudio.Play();
+                Time.timeScale = 0;
+                gamePaused = true;
+                Cursor.visible = true;
+                pauseMenu.SetActive(true);
+               
+            }
+            else
+            {
+                pauseMenu.SetActive(false);
+                pauseaudio.Play();
+                Cursor.visible = false;
+                gamePaused = false;
+                Time.timeScale = 1;
             }
         }
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Back"))
         {
-            if (ispause == true)
-            {
-                pausepanel.SetActive(false);
-                ispause = false;
-            }
+            option.SetActive(false);
+            Cursor.visible = true;
         }
     }
 
-    public void resume()
+    public void ResumeGame()
     {
-        pausepanel.SetActive(false);
+        pauseMenu.SetActive(false);
+        pauseaudio.Play();
+        Cursor.visible = false;
+        gamePaused = false;
+        Time.timeScale = 1;
     }
 
-    public void Option()
+    public void optionLevel()
     {
         option.SetActive(true);
-    }
-    public void Menu()
-    {
-        SceneManager.LoadScene(0);
+        pauseaudio.Play();
+        Cursor.visible = false;
+        gamePaused = false;
+        Time.timeScale = 1;
     }
 
+    public void QuitToMenu()
+    {
+        pauseMenu.SetActive(false);
+        pauseaudio.Play();
+        Cursor.visible = false;
+        gamePaused = false;
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
+    }
 
 }

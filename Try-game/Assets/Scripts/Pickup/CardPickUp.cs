@@ -46,10 +46,10 @@ public class CardPickUp : MonoBehaviour
 		yield return new WaitForSeconds(2f);
 		torch.SetActive(false);
 		about.GetComponent<Text>().text = "";
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.7f);
 		ghost.SetActive(true);
 		about.SetActive(false);
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.35f);
 		torch.SetActive(true);
 		ghost.SetActive(false);
 
