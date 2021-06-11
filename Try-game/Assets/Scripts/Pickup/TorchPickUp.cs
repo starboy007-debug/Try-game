@@ -12,6 +12,7 @@ public class TorchPickUp : MonoBehaviour
 	public float TheDistance;
 	public GameObject padcut;
 	public GameObject skel;
+	public GameObject emer;
 	void Update()
 	{
 		TheDistance = PlayerCasting.distanceFromTarget;
@@ -43,6 +44,8 @@ public class TorchPickUp : MonoBehaviour
 	IEnumerator Disappear()
 	{
 		yield return new WaitForSeconds(2f);
+		emer.SetActive(false);
+		RenderSettings.ambientIntensity = 0.2f;
 		about.GetComponent<Text>().text = "";
 		about.SetActive(false);
 		yield return new WaitForSeconds(12f);

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
@@ -27,5 +28,20 @@ public class Pause : MonoBehaviour
             }
         }
     }
+
+    public void resume()
+    {
+        pausepanel.SetActive(false);
+    }
+
+    public void Option()
+    {
+        option.SetActive(true);
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 
 }

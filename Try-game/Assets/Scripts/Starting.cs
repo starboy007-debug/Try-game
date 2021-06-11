@@ -10,6 +10,7 @@ public class Starting : MonoBehaviour
     public GameObject fadeout;
     public GameObject fadein;
     public GameObject next;
+    public AudioSource btn;
     void Start()
     {
         fadeout.SetActive(true);
@@ -22,6 +23,7 @@ public class Starting : MonoBehaviour
         {
           //  Debug.Log("it work");
             SceneManager.LoadScene(2);
+            btn.Play();
         }
     }
 

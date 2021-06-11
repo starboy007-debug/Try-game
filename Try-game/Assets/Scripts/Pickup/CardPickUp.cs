@@ -50,6 +50,7 @@ public class CardPickUp : MonoBehaviour
 		ghost.SetActive(true);
 		about.SetActive(false);
 		yield return new WaitForSeconds(0.2f);
+		torch.SetActive(true);
 		ghost.SetActive(false);
 
 	}
