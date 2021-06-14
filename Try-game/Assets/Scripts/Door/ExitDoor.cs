@@ -9,16 +9,23 @@ public class ExitDoor : MonoBehaviour
     public GameObject fadein;
    void OnTriggerEnter()
     {
-        if(Cuter.iscut == true)
+        if(CardPickUp.isgo == true)
         {
             fadein.SetActive(true);
-            SceneManager.LoadScene(0);
+            StartCoroutine(Loadtomenu());
+            
         }
         else
         {
             about.GetComponent<Text>().text = "Door is locked";
         }
 
+    }
+
+    IEnumerator Loadtomenu()
+    {
+        yield return new WaitForSeconds(0.9f);
+        SceneManager.LoadScene(0);
     }
     void OnTriggerExit()
     {

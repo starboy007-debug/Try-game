@@ -38,7 +38,7 @@ public class Sequencing : MonoBehaviour
         yield return new WaitForSeconds(4f);
         about.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(4.0f);
-        about.GetComponent<Text>().text = "I should just drop pizza on table and leave";
+        about.GetComponent<Text>().text = "I should just leave the pizza on the table and leave from here";
         yield return new WaitForSeconds(4f);
         about.GetComponent<Text>().text = "";
         yield return new WaitForSeconds(0.5f);

@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Reflection;
+
 public class Menu : MonoBehaviour
 {
 
     public GameObject option;
     public AudioSource btn;
 
+    void Start()
+    {
+        Cursor.visible = true;
+    }
     void Update()
     {
         if (Input.GetButtonDown("Back"))

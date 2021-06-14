@@ -11,6 +11,8 @@ public class CardPickUp : MonoBehaviour
 	public static bool isout = false;
 	public GameObject ghost;
 	public GameObject torch;
+	public static bool isgo = false;
+	
 	void Update()
 	{
 		TheDistance = PlayerCasting.distanceFromTarget;
@@ -52,6 +54,7 @@ public class CardPickUp : MonoBehaviour
 		yield return new WaitForSeconds(0.35f);
 		torch.SetActive(true);
 		ghost.SetActive(false);
+		isgo = true;
 
 	}
 

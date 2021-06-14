@@ -12,6 +12,7 @@ public class Zombietrig : MonoBehaviour
     void OnTriggerEnter()
     {
         zombie.SetActive(true);
+        about.SetActive(true);
         StartCoroutine(Visib());
     }
 

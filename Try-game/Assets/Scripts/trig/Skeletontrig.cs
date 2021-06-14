@@ -20,5 +20,6 @@ public class Skeletontrig : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         ghosttrig2.SetActive(false);
+        this.GetComponent<BoxCollider>().enabled = false;
     }
 }
